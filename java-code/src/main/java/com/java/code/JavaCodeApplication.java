@@ -1,12 +1,20 @@
 package com.java.code;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-public class JavaCodeApplication {
+@EnableScheduling
+public class JavaCodeApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavaCodeApplication.class, args);
+	}
+
+	@Override
+	public void run(String... arg0) throws Exception {
+		System.out.println("JavaCodeApplication is Running!");		
 	}
 }
