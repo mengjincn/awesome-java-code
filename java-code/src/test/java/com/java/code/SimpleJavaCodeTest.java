@@ -2,7 +2,6 @@ package com.java.code;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -13,7 +12,11 @@ import org.springframework.boot.test.rule.OutputCapture;
 import com.google.common.base.Charsets;
 import com.google.common.io.BaseEncoding;
 import com.java.code.util.MathUtils;
-
+/**
+ * 该类用于测试一些简单地Java代码（不需要Spring上下文）
+ * @author 孟进
+ *
+ */
 public class SimpleJavaCodeTest {
 	@Rule
 	public OutputCapture capture = new OutputCapture();
@@ -31,7 +34,7 @@ public class SimpleJavaCodeTest {
 
 	@Test
 	public void testSqrt() {
-		assertThat(MathUtils.sqrt(2), is(1.414213562373095));
+		assertThat(MathUtils.sqrt(2), equalTo(1.414213562373095));
 	}
 
 	@Test

@@ -6,7 +6,12 @@ public class MathUtils {
 	 */
 	private MathUtils() {
 	}
-
+	
+	/**
+	 * 判断 N 是不是素数
+	 * @param N 是正整数
+	 * @return true：N是素数；false：N不是素数
+	 */
 	public static boolean isPrime(int N) {
 		if (N < 2)
 			return false;
@@ -15,7 +20,11 @@ public class MathUtils {
 				return false;
 		return true;
 	}
-
+	/**
+	 * 计算 c 的平方根
+	 * @param c 大于等于0的实数
+	 * @return 如果c小于0，则返回Double.NaN; 否则返回 c 的平方根
+	 */
 	public static double sqrt(double c) {
 		if (c < 0.0)
 			return Double.NaN;

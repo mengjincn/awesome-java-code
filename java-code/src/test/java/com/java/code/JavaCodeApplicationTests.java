@@ -21,6 +21,9 @@ public class JavaCodeApplicationTests {
 	}
 
 	@Test
+	/**
+	 * 测试MySQL数据库配置是否正确，JdbcTemplate是否可以使用
+	 */
 	public void testJdbcTemplate() {
 		Integer count = jdbcTemplate.queryForObject("select count(pk) from operator", Integer.class);
 		assertThat(count, greaterThan(0));
