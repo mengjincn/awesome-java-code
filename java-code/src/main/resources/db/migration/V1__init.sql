@@ -1,3 +1,4 @@
+-- create database testdb;
 -- ----------------------------
 -- Table structure for city
 -- ----------------------------
