@@ -55,7 +55,7 @@ CREATE TABLE `review` (
   CONSTRAINT `FKi0ly7ivbh8ijdgoi7cwtuoavt` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into PERSON (first_name, last_name) values ('Dave', 'Syer');
+insert into person (first_name, last_name) values ('Dave', 'Syer');
 
 insert into city(country, name, state, map) values ('Australia', 'Brisbane', 'Queensland', '-27.470933, 153.023502');
 insert into hotel(city_id, name, address, zip) values (1, 'Conrad Treasury Place', 'William & George Streets', '4001');
