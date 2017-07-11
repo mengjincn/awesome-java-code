@@ -5,6 +5,13 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.commons.io.IOUtils;
 import org.junit.Rule;
 import org.junit.Test;
 import org.springframework.boot.test.rule.OutputCapture;
@@ -45,5 +52,10 @@ public class SimpleJavaCodeTest {
 		assertThat(encodeHello, equalTo("SGVsbG8gV29ybGQ="));
 		String decodeHello = new String(baseEncoding.decode(encodeHello), Charsets.UTF_8);
 		assertThat(decodeHello, equalTo(hello));
+	}
+	
+	@Test
+	public void task() throws FileNotFoundException, IOException{
+	
 	}
 }

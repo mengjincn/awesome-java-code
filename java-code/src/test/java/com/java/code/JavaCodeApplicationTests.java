@@ -11,11 +11,16 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.java.code.flyway.PersonRepository;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JavaCodeApplicationTests {
 	@Autowired
 	Environment environment;
+	
+	@Autowired
+	private PersonRepository repository;
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -29,8 +34,11 @@ public class JavaCodeApplicationTests {
 	 * 测试MySQL数据库配置是否正确，JdbcTemplate是否可以使用
 	 */
 	public void testJdbcTemplate() {
-		Integer count = jdbcTemplate.queryForObject("select count(pk) from operator", Integer.class);
+		Integer count = jdbcTemplate.queryForObject("select count(id) from person", Integer.class);
 		assertThat(count, greaterThan(0));
+		
+		long  c = repository.count();
+		assertThat(c, greaterThan(0l));
 	}
 
 	@Test
