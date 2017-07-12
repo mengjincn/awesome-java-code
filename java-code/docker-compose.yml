@@ -14,7 +14,7 @@ services:
       - "5672:5672"
   mysql:
     restart: always
-    image: daocloud.io/library/mysql:latest
+    build: ./mysql/
     container_name: mysql
     ports: 
       - "3306:3306"

@@ -1,4 +1,6 @@
--- create database testdb;
+-- DROP DATABASE IF EXISTS `testdb`;
+-- CREATE DATABASE `testdb`;
+-- USE `testdb`;
 -- ----------------------------
 -- Table structure for city
 -- ----------------------------
