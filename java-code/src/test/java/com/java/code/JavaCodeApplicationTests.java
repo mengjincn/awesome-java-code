@@ -3,6 +3,7 @@ package com.java.code;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,7 @@ public class JavaCodeApplicationTests {
 	}
 	
 	@Test
+	@Ignore
 	public void testRedis(){
 		/**
 		 * 参考：
@@ -81,6 +83,7 @@ public class JavaCodeApplicationTests {
 	}
 	
 	@Test
+	@Ignore
 	public void testAmqp(){
 		sender.send();
 	}

@@ -17,6 +17,10 @@ public class JavaCodeApplication implements CommandLineRunner{
 	private PersonRepository repository;
 	
 	public static void main(String[] args) {
+		/**
+		 * mvn package -Dmaven.test.skip=true
+		 * java -jar target/java-code-0.0.1-SNAPSHOT.jar
+		 */
 		SpringApplication.run(JavaCodeApplication.class, args);
 	}
 	@Autowired
