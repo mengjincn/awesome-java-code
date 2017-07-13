@@ -1,5 +1,15 @@
 version: '2'
 services: 
+  app:
+    restart: always
+    build: ./app/
+    container_name: app
+    depends_on:
+      - mysql
+      - redis
+      - rabbitmq
+    ports: 
+      - "8080:8080"
   redis:
     restart: always
     image: daocloud.io/library/redis:latest

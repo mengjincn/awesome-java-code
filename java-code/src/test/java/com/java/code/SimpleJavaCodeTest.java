@@ -54,4 +54,14 @@ public class SimpleJavaCodeTest {
 		String decodeHello = new String(baseEncoding.decode(encodeHello), Charsets.UTF_8);
 		assertThat(decodeHello, equalTo(hello));
 	}
+	public static void main(String[] args) {
+		while(true){
+			try {
+				Thread.sleep(3600);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 }
