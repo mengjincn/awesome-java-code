@@ -3,15 +3,16 @@ services:
   app:
     restart: always
     build: .
-    container_name: app
     depends_on:
       - mysql
       - redis
       - rabbitmq
     volumes:
       - /root/.m2:/root/.m2
+      - .:/tmp
     ports: 
       - "8080:8080"
+    command: sh -c "cd /tmp && mvn clean package -DskipTests=true && mv target/*.jar /app.jar && java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   redis:
     restart: always
     image: daocloud.io/library/redis:latest
