@@ -1,9 +1,9 @@
 ﻿FROM maven:3-jdk-7
 RUN rm -f /usr/share/maven/conf/settings.xml
 ADD settings.xml /usr/share/maven/conf/settings.xml
-ADD ../pom.xml /tmp/build/
+ADD pom.xml /tmp/build/
 
-ADD ../src /tmp/build/src
+ADD src /tmp/build/src
         #构建应用
 RUN cd /tmp/build && mvn clean package -DskipTests=true \
         #拷贝编译结果到指定目录
