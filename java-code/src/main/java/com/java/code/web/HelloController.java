@@ -37,6 +37,7 @@ public class HelloController {
 
 	private void printCookies(HttpServletRequest request) {
 		Cookie[] cs = request.getCookies();
+		if(cs==null) return;
 		for (Cookie cookie : cs) {			
 			System.out.println(cookie.getName() + ": " + cookie.getValue());
 		}
