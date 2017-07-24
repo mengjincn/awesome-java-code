@@ -1,0 +1,1 @@
+${Ansi.GREEN} <<<<< Java Code Application build with Spring Boot${spring-boot.formatted-version} >>>>> ${Ansi.DEFAULT}
