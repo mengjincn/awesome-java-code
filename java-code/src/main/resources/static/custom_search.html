@@ -8,24 +8,32 @@
 	    
 	    <title>JavaCodeApplication</title>
 	    
-	    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	    
 	    
 	    <!-- In-document CSS -->
 		<style>
 		  /* ... */
 		</style>
 	</head>
-	<body>	
+	<body>
+	
 		<h1>The index file of JavaCodeApplication</h1>
-				
-		
-		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<div style='width: 60%;'>
+		    <gcse:search></gcse:search>
+		</div>
 		
 		
 		
 		<script>
-		  
+		  (function() {
+		    var cx = '006843566406234516458:slfjzxwikvw';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
 		</script>
 	</body>
 </html>
