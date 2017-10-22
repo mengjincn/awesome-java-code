@@ -1,5 +1,16 @@
 version: '2'
 services: 
+  nginx:
+    restart: always
+    image: daocloud.io/nginx
+    ports:
+      - "10388:10388"
+    depends_on:
+      - app
+    links:
+      - app:oms
+    volumes:
+      - /root/images/javacode/awesome-java-code/java-code:/etc/nginx/conf.d
   app:
     restart: always
     build: .
@@ -8,10 +19,8 @@ services:
       - redis
       - rabbitmq
     volumes:
-      - ~/.m2:/root/.m2
+      - /root/.m2:/root/.m2
       - .:/tmp
-    ports: 
-      - "8080:8080"
     command: sh -c "cd /tmp && mvn clean package -DskipTests=true && mv target/*.jar /app.jar && java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
   redis:
     restart: always
